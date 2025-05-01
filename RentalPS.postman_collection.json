@@ -1,0 +1,1720 @@
+{
+	"info": {
+		"_postman_id": "7135781c-665f-45ae-984d-e5ed5b9f51f7",
+		"name": "RentalPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44117298",
+		"_collection_link": "https://bigarawan.postman.co/workspace/Bigar-Awan's-Workspace~92891c99-0aff-4cde-842a-09eeb3ba1006/collection/44117298-7135781c-665f-45ae-984d-e5ed5b9f51f7?action=share&source=collection_link&creator=44117298"
+	},
+	"item": [
+		{
+			"name": "User-service",
+			"item": [
+				{
+					"name": "Registrasi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"bigar\",\r\n  \"email\": \"varhanfiqih@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/users",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Wawan\",\r\n  \"email\": \"wawan@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/users",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Apr 2025 23:59:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil ditambahkan.\",\n    \"data\": {\n        \"name\": \"Wawan\",\n        \"email\": \"wawan@example.com\",\n        \"updated_at\": \"2025-04-30T23:59:06.000000Z\",\n        \"created_at\": \"2025-04-30T23:59:06.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"bigar\",\r\n  \"email\": \"varhanfiqih@gmail.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/users",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:01:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Validasi gagal.\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "TampilanUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/users",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/users",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:02:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Daftar semua user berhasil diambil.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Wawan\",\n            \"email\": \"wawan@example.com\",\n            \"created_at\": \"2025-04-30T23:59:06.000000Z\",\n            \"updated_at\": \"2025-04-30T23:59:06.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"bigar\",\n            \"email\": \"bigar@gmail.com\",\n            \"created_at\": \"2025-04-30T23:59:34.000000Z\",\n            \"updated_at\": \"2025-04-30T23:59:34.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"varhan\",\n            \"email\": \"varhanfiqih@gmail.com\",\n            \"created_at\": \"2025-04-30T23:59:48.000000Z\",\n            \"updated_at\": \"2025-04-30T23:59:48.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "UserID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/users/5",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/users/1",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:02:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Detail user berhasil diambil.\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Wawan\",\n        \"email\": \"wawan@example.com\",\n        \"created_at\": \"2025-04-30T23:59:06.000000Z\",\n        \"updated_at\": \"2025-04-30T23:59:06.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/users/5",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users",
+										"5"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:02:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User tidak ditemukan.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"dedi\",\r\n  \"email\": \"dedi@example.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/users/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"dedi\",\r\n  \"email\": \"dedi@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/users/1",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:03:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil diperbarui.\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"dedi\",\n        \"email\": \"dedi@example.com\",\n        \"created_at\": \"2025-04-30T23:59:06.000000Z\",\n        \"updated_at\": \"2025-05-01T00:03:40.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"dedi\",\r\n  \"email\": \"dedi@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/users/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:03:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User tidak ditemukan.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/users/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sukses",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/users/3",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:04:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User berhasil dihapus.\"\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/users/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8081"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:04:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User tidak ditemukan.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "console-service",
+			"item": [
+				{
+					"name": "BuatConsole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"lg\",\r\n  \"model\": \"PlayStation 2\",\r\n  \"available\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/consoles",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"consoles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"Sony\",\r\n  \"model\": \"PlayStation 5\",\r\n  \"available\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/consoles",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:13:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Console berhasil ditambahkan.\",\n    \"data\": {\n        \"brand\": \"Sony\",\n        \"model\": \"PlayStation 5\",\n        \"available\": true,\n        \"updated_at\": \"2025-05-01T00:13:24.000000Z\",\n        \"created_at\": \"2025-05-01T00:13:24.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"Sony\",\r\n  \"model\": \"\",\r\n  \"available\": false\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/consoles",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:13:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Validasi gagal.\",\n    \"errors\": {\n        \"model\": [\n            \"The model field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ListConsole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/consoles",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"consoles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/consoles",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:14:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Data semua console berhasil diambil.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"brand\": \"Sony\",\n            \"model\": \"PlayStation 5\",\n            \"available\": 1,\n            \"created_at\": \"2025-05-01T00:13:24.000000Z\",\n            \"updated_at\": \"2025-05-01T00:13:24.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"brand\": \"Sony\",\n            \"model\": \"PlayStation 5\",\n            \"available\": 0,\n            \"created_at\": \"2025-05-01T00:13:37.000000Z\",\n            \"updated_at\": \"2025-05-01T00:13:37.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"brand\": \"Sony\",\n            \"model\": \"PlayStation 3\",\n            \"available\": 0,\n            \"created_at\": \"2025-05-01T00:14:09.000000Z\",\n            \"updated_at\": \"2025-05-01T00:14:09.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ListConsoleID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/consoles/3",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"consoles",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/consoles/1",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:14:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Detail console berhasil diambil.\",\n    \"data\": {\n        \"id\": 1,\n        \"brand\": \"Sony\",\n        \"model\": \"PlayStation 5\",\n        \"available\": 1,\n        \"created_at\": \"2025-05-01T00:13:24.000000Z\",\n        \"updated_at\": \"2025-05-01T00:13:24.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/consoles/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:14:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Console tidak ditemukan.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateListConsole",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"LG\",\r\n  \"model\": \"PlayStation 5\",\r\n  \"available\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/consoles/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"consoles",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"LG\",\r\n  \"model\": \"PlayStation 5\",\r\n  \"available\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/consoles/1",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:15:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Console berhasil diperbarui.\",\n    \"data\": {\n        \"id\": 1,\n        \"brand\": \"LG\",\n        \"model\": \"PlayStation 5\",\n        \"available\": true,\n        \"created_at\": \"2025-05-01T00:13:24.000000Z\",\n        \"updated_at\": \"2025-05-01T00:15:41.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"LG\",\r\n  \"model\": \"PlayStation 5\",\r\n  \"available\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/consoles/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:15:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Console tidak ditemukan.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteListConsole",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/consoles/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"consoles",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/consoles/3",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:16:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Console berhasil dihapus.\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/consoles/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"consoles",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8082"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:16:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Console tidak ditemukan.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "BuatOrder",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{postman-api-key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-API-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": 5,\r\n  \"console_id\": 4,  // Pastikan ID konsol ini benar\r\n  \"start_time\": \"2025-05-01T14:00:00\",\r\n  \"end_time\": \"2025-05-01T18:00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/orders",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_id\": 1,\r\n  \"console_id\": 1,  // Pastikan ID konsol ini benar\r\n  \"start_time\": \"2025-05-01T14:00:00\",\r\n  \"end_time\": \"2025-05-01T18:00:00\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/orders",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8083"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:53:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Order berhasil dibuat.\",\n    \"data\": {\n        \"user_id\": 1,\n        \"console_id\": 1,\n        \"start_time\": \"2025-05-01T14:00:00\",\n        \"end_time\": \"2025-05-01T18:00:00\",\n        \"updated_at\": \"2025-05-01T00:53:22.000000Z\",\n        \"created_at\": \"2025-05-01T00:53:22.000000Z\",\n        \"id\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ListOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/orders",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8083"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 00:59:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Data semua order berhasil diambil.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"console_id\": 1,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:53:22.000000Z\",\n            \"updated_at\": \"2025-05-01T00:53:22.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 4,\n            \"console_id\": 1,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:53:46.000000Z\",\n            \"updated_at\": \"2025-05-01T00:53:46.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 4,\n            \"console_id\": 4,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:53:53.000000Z\",\n            \"updated_at\": \"2025-05-01T00:53:53.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"user_id\": 2,\n            \"console_id\": 2,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:58:52.000000Z\",\n            \"updated_at\": \"2025-05-01T00:58:52.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 3,\n            \"console_id\": 3,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:59:05.000000Z\",\n            \"updated_at\": \"2025-05-01T00:59:05.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"user_id\": 5,\n            \"console_id\": 3,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:59:12.000000Z\",\n            \"updated_at\": \"2025-05-01T00:59:12.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"user_id\": 5,\n            \"console_id\": 4,\n            \"start_time\": \"2025-05-01 14:00:00\",\n            \"end_time\": \"2025-05-01 18:00:00\",\n            \"created_at\": \"2025-05-01T00:59:16.000000Z\",\n            \"updated_at\": \"2025-05-01T00:59:16.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ListOrderID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/orders/9",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders/6",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8083"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 01:00:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"console_id\": 1,\n        \"start_time\": \"2025-05-01 14:00:00\",\n        \"end_time\": \"2025-05-01 18:00:00\",\n        \"created_at\": \"2025-05-01T00:53:22.000000Z\",\n        \"updated_at\": \"2025-05-01T00:53:22.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders/9",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"9"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8083"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 May 2025 01:00:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Order tidak ditemukan\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
